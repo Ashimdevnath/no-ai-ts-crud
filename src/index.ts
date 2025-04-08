@@ -1,3 +1,7 @@
-import express from 'express';
-import {dotenv} from './config/db.config.js'
-const app = express();
+
+import { config } from './config/dotenv.config.js';
+import app from './app.js'
+
+app.listen(config.PORT, () => {
+    console.log(`🚀 Server running at http://localhost:${config.PORT}`);
+})
